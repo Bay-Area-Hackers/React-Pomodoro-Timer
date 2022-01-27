@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button } from '../components/atoms/Button'
+import { Button, Size } from '../components/atoms/Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -30,12 +30,12 @@ Secondary.args = {
 
 export const Large = Template.bind({})
 Large.args = {
-  size: 'large',
+  size: Size.Large,
   label: 'Button',
 }
 
 export const Small = Template.bind({})
 Small.args = {
-  size: 'small',
+  size: Size.Small,
   label: 'Button',
 }

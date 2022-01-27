@@ -1,23 +1,31 @@
 import React from 'react'
 import './button.css'
 
+export const Size = {
+  Small: '',
+  Medium: '',
+  Large: '',
+} as const
+
+type Size = typeof Size[keyof typeof Size]
+
 interface ButtonProps {
   primary?: boolean
   backgroundColor?: string
-  size?: 'small' | 'medium' | 'large'
+  size?: Size
   label: string
   onClick?: () => void
 }
 export const Button = ({
   primary = false,
-  size = 'medium',
+  size = Size.Medium,
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
   const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
+    ? 'text-white bg-blue-300'
+    : 'text-black bg-transparent shadow'
   return (
     <button
       type="button"
