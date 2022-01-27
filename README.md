@@ -1,6 +1,6 @@
 # 環境構築
 
-1. 各々の VSCode に clone してください。
+1. 各々の VSCode に clone 
 
 ```
 $ git clone https://github.com/Bay-Area-Hackers/react-pomodoro-timer.git
