@@ -34,6 +34,6 @@ URL を叩く http://localhost:3000/
 
 - React (TypeScript/JavaScript のフレームワーク)
 - TypeScript (JavaScript の上位互換)
-- TailwindCSS (CSS ライブラリ)
+- [TailwindCSS](https://tailwindcss.com/) (CSS ライブラリ)
 - npm (パッケージ管理ツール)
 - storybook (UI 構築ライブラリ)
