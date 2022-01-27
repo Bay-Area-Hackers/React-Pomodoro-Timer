@@ -1,10 +1,10 @@
 import React from 'react'
-import './button.css'
+// import './button.css'
 
 export const Size = {
-  Small: '',
-  Medium: '',
-  Large: '',
+  Small: 'px-3 py-2 text-md',
+  Medium: 'px-5 py-3 text-xl',
+  Large: 'px-7 py-4 text-2xl',
 } as const
 
 type Size = typeof Size[keyof typeof Size]
@@ -13,29 +13,29 @@ interface ButtonProps {
   primary?: boolean
   backgroundColor?: string
   size?: Size
-  label: string
+  children: string
   onClick?: () => void
 }
 export const Button = ({
   primary = false,
   size = Size.Medium,
   backgroundColor,
-  label,
+  children,
+  onClick,
   ...props
 }: ButtonProps) => {
   const mode = primary
     ? 'text-white bg-blue-300'
-    : 'text-black bg-transparent shadow'
+    : 'text-black bg-white drop-shadow-md'
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
+      className={`font-bold cursor-pointer rounded-full ${size} ${mode}`}
       style={{ backgroundColor }}
+      onClick={onClick}
       {...props}
     >
-      {label}
+      {children}
     </button>
   )
 }

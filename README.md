@@ -17,7 +17,7 @@ $ npm i
 # storybook 使用
 
 ```
-$ npm storybook
+$ npm run storybook
 ```
 
 URL を叩く http://localhost:6006/
