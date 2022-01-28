@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Size = {
   Small: 'px-3 py-2 text-md',
   Medium: 'px-5 py-3 text-xl',

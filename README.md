@@ -1,6 +1,6 @@
 # 環境構築
 
-1. 各々の VSCode に clone 
+1. 各々の VSCode に clone
 
 ```
 $ git clone https://github.com/Bay-Area-Hackers/react-pomodoro-timer.git
@@ -37,3 +37,6 @@ URL を叩く http://localhost:3000/
 - [TailwindCSS](https://tailwindcss.com/) (CSS ライブラリ)
 - npm (パッケージ管理ツール)
 - storybook (UI 構築ライブラリ)
+- Redux (状態管理ツール)
+- [react-countdown-circle-timer](https://www.npmjs.com/package/react-countdown-circle-timer) (タイマー UI)
+- [react-confetti](https://qiita.com/mkin/items/f51fcfd7970be3c3bf3f) (紙吹雪アニメーション)
