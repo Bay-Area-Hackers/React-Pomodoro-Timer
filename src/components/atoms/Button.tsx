@@ -1,5 +1,4 @@
 import React from 'react'
-// import './button.css'
 
 export const Size = {
   Small: 'px-3 py-2 text-md',
