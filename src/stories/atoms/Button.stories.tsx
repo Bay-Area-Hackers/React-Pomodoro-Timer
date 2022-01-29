@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button, Size } from '../components/atoms/Button'
+import { Button, Size } from '../../components/atoms/Button'
 
 // export default {
 //   title: 'Button',
@@ -20,7 +20,7 @@ import { Button, Size } from '../components/atoms/Button'
 // )
 
 export default {
-  title: 'Example/Button',
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -31,6 +31,11 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
+  primary: true,
+  children: 'Button',
+}
+export const Test = Template.bind({})
+Test.args = {
   primary: true,
   children: 'Button',
 }
