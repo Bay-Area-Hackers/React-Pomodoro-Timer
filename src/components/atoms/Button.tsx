@@ -1,3 +1,5 @@
+import React, { HTMLAttributes, ReactNode } from 'react'
+
 export const Size = {
   Small: 'px-3 py-2 text-md',
   Medium: 'px-5 py-3 text-xl',
@@ -19,7 +21,7 @@ export const Button = ({
   backgroundColor,
   children,
   onClick,
-  ...props
+  ...props                                                                 
 }: ButtonProps) => {
   const mode = primary
     ? 'text-white bg-blue-300'
@@ -36,3 +38,16 @@ export const Button = ({
     </button>
   )
 }
+interface Props extends HTMLAttributes<HTMLButtonElement>{
+  Children: ReactNode;
+
+  variant: 'primary' | 'secondary';
+}
+
+// export const Button = ({children, ...props}: Props) => {
+//   return (
+//     <button{...props}>
+//         {children}
+//     </button>
+//   )
+// }
