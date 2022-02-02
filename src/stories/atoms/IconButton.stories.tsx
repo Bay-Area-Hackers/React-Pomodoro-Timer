@@ -6,7 +6,6 @@ import { action } from "@storybook/addon-actions";
 export default {
   title: 'Atoms/IconButton',
   component: IconButton,
-  // argTypes: { onClick: { action: 'clicked' } },
   argTypes: {
     onClick: { action: 'clicked' },
   },
