@@ -36,4 +36,3 @@ export const Button = ({
     </button>
   )
 }
-© 2022 GitHub, Inc.
