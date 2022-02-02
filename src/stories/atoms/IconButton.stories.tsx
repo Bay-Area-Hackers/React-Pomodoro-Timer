@@ -1,4 +1,4 @@
-import { IconButton } from '../../components/atoms/IconButton'
+import { IconButton, IconType } from '../../components/atoms/IconButton'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 import { action } from "@storybook/addon-actions";
@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof IconButton> = (args) => (
 export const Yes = Template.bind({})
 Yes.args = {
   isYes: true,
-  iconType: 'close',
+  iconType: IconType.Close,
   onClick: action("Icon is clicked!"),
 }
 

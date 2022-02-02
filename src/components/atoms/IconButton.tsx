@@ -1,36 +1,35 @@
 type Props = {
-    isYes: boolean
-    iconType: string
-    onClick: () => void
-  }
+  isYes: boolean
+  iconType: IconType
+  onClick: () => void
+  size?: number
+}
 
-  
+export const IconType = {
+  Close: "/img/close.svg",
+  Down: "/img/down.svg",
+  Linkcopy: "/img/linkcopy.svg",
+  Picture: "/img/picture.svg",
+  Pomoblack: "/img/pomoblack.svg",
+  Pomowhite: "/img/pomowhite.svg",
+  Quit: "/img/quit.svg",
+  Skip: "/img/skip.svg",
+  Start: "/img/start.svg",
+  Stop: "/img/stop.svg",
+  Twitter: "/img/twitter.svg",
+  Up: "/img/up.svg",
+} as const 
 
-  export const IconButton: React.FC<Props> = ({ isYes, iconType, onClick }) => {
-    let iconDict: { [key:string]: string } = {
-      'close': "/img/close.svg",
-      'down': "/img/down.svg",
-      "linkcopy": "/img/linkcopy.svg",
-      "picture": "/img/picture.svg",
-      "pomoblack": "/img/pomoblack.svg",
-      'pomowhite': "/img/pomowhite.svg",
-      'quit': "/img/quit.svg",
-      'skip': "/img/skip.svg",
-      'start': "/img/start.svg",
-      'stop': "/img/stop.svg",
-      'twitter': "/img/twitter.svg",
-      'up': "/img/up.svg",
-    };
-  
-    const iconPath = iconDict[iconType]
+type IconType = typeof IconType[keyof typeof IconType]
 
-    return (
-      <div>
-        <a className='hyperlinkStyle' onClick={onClick}>
-          <img className='logoStyle' src={iconPath} alt='logo' height={50} width={50}></img>
-        </a>
-        {isYes ? 'Yes' : 'No'}
-      </div>
-    )
-  }
+export const IconButton: React.FC<Props> = ({ isYes, iconType, onClick, size=50 }) => {
+  return (
+    <div>
+      <a className='hyperlinkStyle' onClick={onClick}>
+        <img className='logoStyle' src={iconType} alt='logo' height={size} width={size}></img>
+      </a>
+      {isYes ? 'Yes' : 'No'}
+    </div>
+  )
+}
 
