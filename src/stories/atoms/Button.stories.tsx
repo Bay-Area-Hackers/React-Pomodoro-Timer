@@ -39,3 +39,10 @@ Test.args = {
   primary: true,
   children: 'Button',
 }
+
+// export const Yes = Template.bind({})
+// Yes.args = {
+//   isYes: true,
+//   onClick: action("Button is clicked!"),
+// }
+

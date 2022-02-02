@@ -4,6 +4,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { TextButton } from './components/atoms/TextButton'
+import { IconButton } from './components/atoms/IconButton'
 
 const changeHourMinSec = (remainingTime: number) => {
   // const hours = Math.floor(remainingTime / 3600)
@@ -17,9 +18,27 @@ const Test = () => {
   return (
     <>
       <h1 className="text-blue-600 flex justify-center py-24 text-5xl">
-        Hello World
+        Hello World!
       </h1>
+
+      {/* <IconButton isYes={isTrue} onClick={() => setIsTrue(!isTrue)} /> */}
+
+      <img src="/img/skip.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/close.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/linkcopy.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/picture.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/pomoblack.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/pomowhite.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/quit.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/start.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/stop.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/twitter.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/up.svg" alt="アイコン" height={50} width={50}/>
+      <img src="/img/down.svg" alt="アイコン" height={50} width={50}/>
+      
+    
       <TextButton isYes={isTrue} onClick={() => setIsTrue(!isTrue)} />
+
       <div className="flex justify-center">
         <CountdownCircleTimer
           isPlaying
