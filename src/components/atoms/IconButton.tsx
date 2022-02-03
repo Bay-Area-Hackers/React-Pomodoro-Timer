@@ -1,5 +1,4 @@
 type Props = {
-  isYes: boolean
   iconType: IconType
   onClick: () => void
   size?: number
@@ -22,14 +21,12 @@ export const IconType = {
 
 type IconType = typeof IconType[keyof typeof IconType]
 
-export const IconButton: React.FC<Props> = ({ isYes, iconType, onClick, size=50 }) => {
+export const IconButton: React.FC<Props> = ({ iconType, onClick, size=50 }) => {
   return (
     <div>
       <a className='hyperlinkStyle' onClick={onClick}>
-        <img className='logoStyle' src={iconType} alt='logo' height={size} width={size}></img>
+        <img className='logoStyle' src={iconType} alt='logo' height={size} width={size} />
       </a>
-      {isYes ? 'Yes' : 'No'}
     </div>
   )
 }
-
