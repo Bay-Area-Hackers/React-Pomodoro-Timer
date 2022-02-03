@@ -13,6 +13,6 @@ const Template: ComponentStory<typeof Modal> = (args) => (
 
 export const Test = Template.bind({})
 Test.args = {
-  isTrue: true,
-  
+  isYes: true,
+  children: <div>yo</div>
 }

@@ -3,34 +3,32 @@ import ReactModal from 'react-modal';
 import { useState } from 'react';
 import "./Modal.css";
 
+
 type Props = {
-    isTrue: boolean
-    // children: JSX.Element
+    isYes: boolean
+    children: JSX.Element
   }
 
-const Modal: React.FC<Props> = ({isTrue, children})　=> {
-    const [showModal, setShowModal] = useState(isTrue);
+const Modal: React.FC<Props> = ({isYes, children})　=> {
+    const [showModal, setShowModal] = useState(isYes);
 
-
-    const handleOpenModal = () => {
-        setShowModal(true);
-    }
-    const handleCloseModal = () => {
-        setShowModal(false);
+    const handleModal = () => {
+        setShowModal(!showModal);
     }
 
     return (
         <div>
             <ReactModal 
                isOpen={showModal}
-               onRequestClose={handleCloseModal}
+               onRequestClose={handleModal}
                shouldCloseOnOverlayClick={true}
                closeTimeoutMS={500}
                contentLabel="My dialog"
                className="mymodal"
                overlayClassName="myoverlay"
             >
-                <button onClick={handleCloseModal} type="button" className="close-button" aria-label="Close">
+                <button onClick={handleModal} type="button" className="close-button" 
+                 aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 {children}
