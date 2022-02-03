@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 // @ts-ignore
 import Select from "react-select";
 
-export const SelectBox = (props) => {
-  const { isTimer, initNum, setter } = props;
+type Props = {
+  isTimer: boolean
+  initNum: number
+  setter: (num: number) => void
+};
+
+export const SelectBox: React.FC<Props> = ({ isTimer, initNum, setter }) => {
   const handleValueChange = (event) => {
     const inputValue = event.target.value
     setter(inputValue);
