@@ -11,10 +11,16 @@ const Template: ComponentStory<typeof SelectBox> = (args) => (
   <SelectBox {...args} />
 )
 
-export const Test = Template.bind({})
-Test.args = {
+export const TimerTest = Template.bind({})
+TimerTest.args = {
   isTimer: true,
-  initNum: 100,
+  initNum: 25,
+}
+
+export const PomoTest = Template.bind({})
+PomoTest.args = {
+  isTimer: false,
+  initNum: 4,
 }
 
 // export const ManyItems: ComponentStory<typeof TextButton> = (args) => (

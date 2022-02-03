@@ -1,34 +1,37 @@
-import Form from 'react-bootstrap/Form'
+import React, { useState } from 'react';
+// @ts-ignore
+import Select from "react-select";
 
-type BoxItem = {
-  isTimer: boolean;
-  // setter: State;
-  initNum: number;
-}
-
-// returns an iterable of concective integers
-const range = (start:number, end:number) => {
-  return Array.from(Array(end - start + 1).keys()).map(x => x + start);
-}
-
-export const SelectBox = (props: BoxItem) => {
-  const { isTimer, initNum } = props;
-
-  let nums: number[];
-
-  if (isTimer) {
-    nums = range(1, 60);
-  } else {
-    nums = range(1, 10);
+export const SelectBox = (props) => {
+  const { isTimer, initNum, setter } = props;
+  const handleValueChange = (event) => {
+    const inputValue = event.target.value
+    setter(inputValue);
   };
 
-  return (
+  const options: any[] = [];
+  const upper: number = isTimer ? 61 : 11;
+  for(let i = 1; i < upper; i++) {
+    let obj = {};
+    obj['value'] = i;
+    if (i == 1) {
+      obj['label'] = isTimer ? `${i} minute` : `${i} pomo`;
+    } else {
+      obj['label'] = isTimer ? `${i} minutes` : `${i} pomos`;
+    }
+    options.push(obj);
+  };
+
+   return (
     <>
-      <p>Pomos in each round</p>
-      <Form.Select aria-label="Default select example">
-        <option>select here</option>
-        {nums.map((num: number) => <option value={num.toString()}>{num}</option>)}
-      </Form.Select>
+      <Select
+        className="w-40"
+        maxMenuHeight={250}
+        options={options}
+        defaultValue={initNum}
+        onChange={handleValueChange}
+        id="search-select"
+      />
     </>
   );
 };
