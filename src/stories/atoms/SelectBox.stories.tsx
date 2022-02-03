@@ -22,7 +22,3 @@ PomoTest.args = {
   isTimer: false,
   initNum: 4,
 }
-
-// export const ManyItems: ComponentStory<typeof TextButton> = (args) => (
-//   const []
-// )
