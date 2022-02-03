@@ -17,9 +17,14 @@ type Props = {
 }
 
 export const changeHourMinSec = (remainingTime: number) => {
-  // const hours = Math.floor(remainingTime / 3600)
-  const minutes = Math.floor((remainingTime % 3600) / 60)
-  const seconds = remainingTime % 60
+  let minutes = String(Math.floor((remainingTime % 3600) / 60))
+  if (minutes.length == 1) {
+    minutes = '0' + minutes
+  }
+  let seconds = String(remainingTime % 60)
+  if (seconds.length == 1) {
+    seconds = '0' + seconds
+  }
   return `${minutes}:${seconds}`
 }
 
